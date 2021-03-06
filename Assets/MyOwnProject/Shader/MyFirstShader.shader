@@ -3,6 +3,8 @@
     Properties
     {
         _Color("Albedo", Color) = (1,1,1,1)
+        //_Emission2("Emission Color",vector)=(1,1,1,1)
+        _Emission2("Emission Color",Color) = (1,1,1,1)
         _Emission("Emission",Range(0,1))=0.0
         //_MainTex ("Albedo (RGB)", 2D) = "white" {}
         //_Glossiness ("Smoothness", Range(0,1)) = 0.5
@@ -25,6 +27,7 @@
         half _Metallic;
         fixed4 _Color;
         half _Emission;
+        fixed4 _Emission2;
         
         void surf (Input IN, inout SurfaceOutput o)
         {
@@ -33,6 +36,9 @@
             o.Alpha = c.a;*/
 
             o.Albedo = _Color.rgb;
+            o.Emission = _Emission2;
+            //o.Emission = o.Emission * _Emission;
+            //o.Emission = _Emission2;
         }
         ENDCG
     }
