@@ -3,7 +3,7 @@
     Properties
     {
        _Color("Color", Color) = (1,1,1,1)
-       _Alpha("Albedo", Color) = (1,1,1,1)
+       _Alpha("Alpha", float) = (1,1,1,1)
     }
     SubShader
     {
@@ -17,7 +17,7 @@
         };
 
         fixed4 _Color;
-        fixed4 _Alpha;
+        fixed _Alpha;
         void surf(Input IN, inout SurfaceOutput o)
         {
             o.Alpha = _Alpha.r ;
