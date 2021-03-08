@@ -25,9 +25,8 @@
         
         void surf (Input IN, inout SurfaceOutput o)
         {
-            o.Albedo  = (tex2D(_MainTex, IN.uv_MainTex)* _ColorMultiplier* _Color).rgb;
-            o.Albedo.g = 1;
-            o.Emission = texCUBE(_CubeRef, IN.worldRefl);
+            o.Albedo  = (tex2D(_MainTex, IN.uv_MainTex)* _ColorMultiplier* float4(0, 1, 0, 1)).rgb;
+            //o.Emission = texCUBE(_CubeRef, IN.worldRefl);
         }
         ENDCG
     }
